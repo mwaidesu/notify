@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:notify/screens/HomePage/homepage.dart';
+import 'package:notify/screens/WelcomePage/welcomepage.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,7 +15,15 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: HomePage(),
+      initialRoute: '/',
+      routes:{
+        '/': (context) => const WelcomePage(),
+        '/homepage': (context) => const HomePage(),
+      },
+      theme: ThemeData(
+        brightness: Brightness.dark
+      ),
+      // home: WelcomePage(),
     );
   }
 }

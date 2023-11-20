@@ -1,7 +1,6 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -9,51 +8,42 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          SizedBox(
-            height: kToolbarHeight,
-          ),
-          Image.asset("lib/assets/images/todo.png"),
-          SizedBox(
-            height: 12.0,
-          ),
-          SizedBox(
-            width: double.infinity,
-          ),
-          Text(
-            "Manage Your Everyday Task List",
-            style: TextStyle(
-              fontSize: 40.0,
-              fontWeight: FontWeight.bold,
-            ),
-            textAlign: TextAlign.center,
-          ),
-          SizedBox(
-            height: 24.0,
-          ),
-          Padding(
-            padding: const EdgeInsets.only(right:20.0, left: 20.0),
-            child: Text(
-              "Welcome to Notify, your go-to companion for effortless organization! Streamline your daily tasks with our intuitive app, featuring a user-friendly interface and customizable options to keep you on track. Let's make productivity a breeze together!",
-              style: TextStyle(
-                fontSize: 15.0,
-                fontWeight: FontWeight.w300,
-              ),
-              textAlign: TextAlign.center,
-            ),
-          ),
-          SizedBox(height: kToolbarHeight,),
-          ElevatedButton(onPressed: (){}, child: Text("Get Started"), style: ElevatedButton.styleFrom(
-            backgroundColor: Colors.red[400],
-            minimumSize: Size(300, 50),
-            elevation: 5.0,
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(5.0),
-            ),
-          ),)
+      appBar: AppBar(
+        leading: Icon(Icons.menu,),
+        elevation: 0,
+
+        actions: [
+          IconButton(onPressed: (){}, icon: Icon(Icons.search,),),
+          IconButton(onPressed: (){}, icon: Icon(Icons.notifications,),),
         ],
+        
+
+
+      ),
+      body: Padding(
+        padding: const EdgeInsets.all(12.0),
+        child: Column(
+          children: const[
+            // SizedBox(height: 12.0,),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text("Hello Mwai,", style:TextStyle(
+                  fontSize: 32,
+                  fontWeight: FontWeight.bold,
+                ),),
+
+                Text("25 tasks", style:TextStyle(
+                  fontSize: 16,
+                ),
+                textAlign: TextAlign.start,
+                ),
+              ],
+            )
+      
+          ],
+      
+        ),
       ),
     );
   }
